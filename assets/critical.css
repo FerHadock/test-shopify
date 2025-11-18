@@ -115,3 +115,47 @@ body {
 .shopify-section > .full-width {
   grid-column: 1 / -1;
 }
+
+/* Product card component styles */
+.product-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.product-card__link {
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+
+.product-card__image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  display: block;
+}
+
+.product-card__placeholder {
+  height: 150px;
+  background-color: #eee;
+  line-height: 150px;
+  text-align: center;
+}
+
+.product-card__title {
+  margin-top: 10px;
+}
+
+.product-card__price {
+  font-weight: bold;
+  color: green;
+}
+
+.product-card__compare-price {
+  text-decoration: line-through;
+  color: red;
+  display: block;
+  margin-top: 6px;
+}
+

@@ -4,6 +4,8 @@
     {{ 'now' | date: '%Y' }}
     {{ shop.name | link_to: routes.root_url }}, {{ powered_by_link }}
   </div>
+  <!-- PRUEBA DE LIQUID -->
+  <p>La moneda de esta página son: {{ shop.currency }}</p>
 
   <div class="footer__links">
     {% for link in section.settings.menu.links %}

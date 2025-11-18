@@ -1,0 +1,29 @@
+{% comment %}
+  Este snippet DEBE recibir el objeto 'product_item'
+  desde el bucle de la colección.
+{% endcomment %}
+
+{% liquid
+  assign title = product_item.title
+  assign url = product_item.url
+  assign image = product_item.featured_media.preview_image
+  assign price = product_item.price | money
+%}
+
+<div class="product-card">
+  <a href="{{ url }}" class="product-card__link">
+    {% if image %}
+      {% assign alt_text = image.alt | default: title %}
+      {{ image | image_tag: width: 300, alt: alt_text, loading: 'lazy', class: 'product-card__image' }}
+    {% else %}
+      <div class="product-card__placeholder">Sin Imagen</div>
+    {% endif %}
+
+    <h3 class="product-card__title">{{ title }}</h3>
+    <p class="product-card__price">{{ price }}</p>
+
+    {% if product_item.compare_at_price > product_item.price %}
+      <span class="product-card__compare-price">Precio anterior: {{ product_item.compare_at_price | money }}</span>
+    {% endif %}
+  </a>
+</div>

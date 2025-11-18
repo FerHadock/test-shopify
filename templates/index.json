@@ -9,12 +9,27 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "hello-world",
-      "settings": {}
-    }
+    "header": {
+      "type": "header",
+      "settings": {
+        // ... configuración del header
+      }
+    },
+    // <--- ¡AÑADE TU NUEVA SECCIÓN AQUÍ!
+    "mi-bloque-productos": {
+      "type": "featured-products", 
+      "settings": {
+        "heading": "¡Echa un vistazo a nuestros favoritos!",
+        "collection": "all",
+        "product_limit": 3 
+      }
+    },
+    // ... el resto de las secciones
   },
   "order": [
-    "main"
+    "header",
+    "mi-bloque-productos", 
+    "hero",
+    // ... el resto del orden
   ]
 }

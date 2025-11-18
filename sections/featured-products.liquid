@@ -1,0 +1,56 @@
+{% comment %}
+  featured-products.liquid
+  Una sección para listar productos usando el snippet product-card
+{% endcomment %}
+
+<div class="section-{{ section.id }}">
+  <div style="padding: 40px; text-align: center;">
+
+    <h2>{{ section.settings.heading }}</h2>
+    
+    <div style="display: flex; gap: 20px; justify-content: center;">
+      {% comment %}
+        Itera sobre los productos de la colección seleccionada
+      {% endcomment %}
+      {% for product in collections[section.settings.collection].products limit: section.settings.product_limit %}
+        {% render 'product-card', product_item: product %}
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Productos Destacados",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Nuestros Mejores Productos",
+      "label": "Título de la sección"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Selecciona la Colección"
+    },
+    {
+      "type": "range",
+      "id": "product_limit",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "default": 4,
+      "label": "Número de productos a mostrar"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Productos Destacados",
+      "category": "Colecciones"
+    }
+  ]
+}
+{% endschema %}

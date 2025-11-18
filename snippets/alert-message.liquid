@@ -1,0 +1,17 @@
+{% comment %}
+    Este snippet recibe una variable 'tipo' (ej: 'success', 'error')
+    y una variable 'mensaje'.
+{% endcomment %}
+
+{% assign css_color = 'blue' %}
+
+{% if type == 'error' %}
+  {% assign css_color = 'red' %}
+{% elsif type == 'success' %}
+  {% assign css_color = 'green' %}
+{% endif %}
+
+<div style="padding: 15px; border: 1px solid {{ css_color }}; background-color: lightgrey; margin: 10px 0;">
+    <strong style="color: {{ css_color }}; text-transform: uppercase;">Alerta de tipo: {{ type }}</strong>
+    <p>{{ message }}</p>
+</div>
