@@ -2,7 +2,7 @@
   <br>
     <img src="./assets/shoppy-x-ray.svg" alt="logo" width="200">
   <br>
-  Shopify Skeleton Theme
+  Prueba de Shopify Skeleton Theme by Hadock
 </h1>
 
 A minimal, carefully structured Shopify theme designed to help you quickly get started. Designed with modularity, maintainability, and Shopify's best practices in mind.
@@ -158,3 +158,4 @@ Visit our [CONTRIBUTING.md](./CONTRIBUTING.md) for a detailed overview of our pr
 ## License
 
 Skeleton Theme is open-sourced under the [MIT](./LICENSE.md) License.
+
